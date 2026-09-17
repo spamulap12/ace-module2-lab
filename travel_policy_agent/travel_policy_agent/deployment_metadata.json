@@ -1,0 +1,7 @@
+{
+  "remote_agent_runtime_id": "projects/462224310680/locations/us-central1/reasoningEngines/1292394004834418688",
+  "deployment_target": "agent_runtime",
+  "is_a2a": false,
+  "agent_directory": "travel_policy_agent",
+  "deployment_timestamp": "2026-07-20T05:12:01.888969+00:00"
+}

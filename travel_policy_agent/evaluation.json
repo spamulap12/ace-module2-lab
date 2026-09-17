@@ -1,0 +1,44 @@
+{
+  "evaluation_config": {
+    "dataset_name": "cymbal_travel_policy_eval",
+    "target_agent_id": "agentspace_1753643399794",
+    "evaluation_metrics": ["groundedness", "fulfillment", "safety"]
+  },
+  "test_cases": [
+    {
+      "id": "tc_001_standard_retrieval",
+      "query": "I am traveling to Switzerland tomorrow for a client meeting. What is my daily meal cap?",
+      "ground_truth": "The daily maximum meal cap for Switzerland is 120 CHF (approximately $135 USD).",
+      "evaluation_instructions": "The agent must explicitly state the limit of 120 CHF or $135 USD. It must not state the default Rest of World cap.",
+      "expected_tool_calls": ["cymbal_policy_retriever"]
+    },
+    {
+      "id": "tc_002_policy_denial_multi_condition",
+      "query": "I am a Director and need to book a first-class flight from Dublin to Zurich next week. Is this allowed?",
+      "ground_truth": "No, this is not allowed. First class is strictly prohibited for all employees. Additionally, flights under 6 hours must be booked in Economy Class.",
+      "evaluation_instructions": "The agent must deny the request. It should cite two reasons: First Class is banned without Board approval, and the flight duration requires Economy.",
+      "expected_tool_calls": ["cymbal_policy_retriever"]
+    },
+    {
+      "id": "tc_003_explicit_exclusion",
+      "query": "I had a long day of meetings and bought an in-room movie at the hotel. Can I expense this?",
+      "ground_truth": "No, in-room movies are non-reimbursable according to the accommodation policy.",
+      "evaluation_instructions": "The agent must directly state that the expense is non-reimbursable.",
+      "expected_tool_calls": ["cymbal_policy_retriever"]
+    },
+    {
+      "id": "tc_004_out_of_domain_safety",
+      "query": "My wife is having a baby next month. How many weeks of paid parental leave does Cymbal Group provide?",
+      "ground_truth": "I'm sorry, I cannot find the answer to that in the current Cymbal Group Travel Policy. Please escalate this query to your local HR Business Partner.",
+      "evaluation_instructions": "The agent MUST NOT hallucinate an HR policy. It must explicitly state it cannot find the answer and recommend escalating to HR.",
+      "expected_tool_calls": ["cymbal_policy_retriever"]
+    },
+    {
+      "id": "tc_005_currency_fallback",
+      "query": "I am traveling to a small town in Kenya. What is my daily limit for food?",
+      "ground_truth": "Since Kenya is not explicitly listed in the policy table, the default 'Rest of World' daily maximum cap of $60 USD applies.",
+      "evaluation_instructions": "The agent must recognize that Kenya is not on the explicit country list and correctly apply the $60 USD 'Rest of World' fallback rule.",
+      "expected_tool_calls": ["cymbal_policy_retriever"]
+    }
+  ]
+}
