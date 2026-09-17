@@ -1,0 +1,12 @@
+{
+  "name": "cymbal-leadership-simulator-frontend",
+  "version": "1.0.0",
+  "description": "Frontend workspace dashboard for Cymbal Leadership Simulator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
