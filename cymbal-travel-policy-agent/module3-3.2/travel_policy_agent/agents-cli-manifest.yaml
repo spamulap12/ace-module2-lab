@@ -1,0 +1,8 @@
+name: travel-policy-agent
+agent_directory: .
+region: us-central1
+acli_version: 1.2.1
+language: python
+create_params:
+  deployment_target: agent_runtime
+  session_type: in_memory
