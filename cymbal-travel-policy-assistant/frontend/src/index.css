@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message-bubble-user {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: white;
+  border-radius: 18px 18px 2px 18px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.message-bubble-agent {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 18px 18px 18px 2px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.citation-chip {
+  transition: all 0.2s ease;
+}
+
+.citation-chip:hover {
+  background-color: #e0f2fe;
+  transform: translateY(-1px);
+}
