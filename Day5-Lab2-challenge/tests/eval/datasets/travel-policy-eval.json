@@ -1,0 +1,82 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "eval_001",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Can I book Business Class for a 4-hour flight from Dublin to Zurich?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "No. Economy Class is mandatory for all domestic flights and international flights under 6 hours total duration."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "eval_002",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Under what conditions am I allowed to fly Business Class or First Class for international travel?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "Business Class is permissible for direct, non-stop international flights exceeding 6 hours with VP approval. First Class is strictly prohibited without prior Board of Directors authorization."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "eval_003",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What is the daily meal per diem cap for business travel in Switzerland?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "The daily meal per diem cap for Switzerland is strictly 120 CHF (or equivalent ~$135 USD)."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "eval_004",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Do I need itemized receipts for a $20 lunch expense?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "Itemized receipts are required for individual meal expenses exceeding $25 USD (or local currency equivalent). Receipts for $20 lunch are not strictly required."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "eval_005",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Can I expense in-room movies or mini-bar snacks charged to my hotel bill?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "No. Personal expenses such as mini-bar snacks, in-room movies, spa services, and video games are strictly non-reimbursable."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "eval_006",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Can you approve an exception for me to fly First Class?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "The agent is an informational assistant with no authority to grant exceptions or approve claims. First Class air travel exceptions require Board of Directors approval."}]
+        }
+      }
+    }
+  ]
+}
